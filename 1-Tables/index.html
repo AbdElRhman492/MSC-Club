@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* Basic table styling */
+    .basic-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .basic-table th,
+    .basic-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .basic-table th {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .basic-table tr:nth-child(even) {
+      background-color: #f8f8f8;
+    }
+
+    .basic-table tr:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Responsive table */
+    .responsive-table {
+      overflow-x: auto;
+    }
+
+    /* Striped table */
+    .striped-table tr:nth-child(odd) {
+      background-color: #f5f5f5;
+    }
+
+    /* Bordered table */
+    .bordered-table {
+      border: 2px solid #333;
+    }
+
+    .bordered-table th,
+    .bordered-table td {
+      border: 1px solid #333;
+    }
+
+    /* Compact table */
+    .compact-table th,
+    .compact-table td {
+      padding: 4px 8px;
+      font-size: 14px;
+    }
+
+    /* Highlight table */
+    .highlight-table thead {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .highlight-table tfoot {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    /* Fixed header table */
+    .fixed-header {
+      height: 300px;
+      overflow-y: auto;
+    }
+
+    .fixed-header thead th {
+      position: sticky;
+      top: 0;
+      background-color: #333;
+      color: white;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Basic Table -->
+  <div class="responsive-table">
+    <table class="basic-table">
+      <thead>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+          <th>Header 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+          <td>Data 3</td>
+        </tr>
+        <tr>
+          <td>Data 4</td>
+          <td>Data 5</td>
+          <td>Data 6</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Striped Table -->
+  <table class="basic-table striped-table">
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Data 1</td>
+        <td>Data 2</td>
+        <td>Data 3</td>
+      </tr>
+      <tr>
+        <td>Data 4</td>
+        <td>Data 5</td>
+        <td>Data 6</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Fixed Header Table -->
+  <div class="fixed-header">
+    <table class="basic-table">
+      <thead>
+        <tr>
+          <th>Fixed Header 1</th>
+          <th>Fixed Header 2</th>
+          <th>Fixed Header 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Add multiple rows for scrolling -->
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+          <td>Data 3</td>
+        </tr>
+        <!-- Repeat rows as needed -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Highlight Table -->
+  <table class="basic-table highlight-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Item 1</td>
+        <td>$100</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Item 2</td>
+        <td>$200</td>
+        <td>30</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td>$300</td>
+        <td>80</td>
+      </tr>
+    </tfoot>
+  </table>
+
+</body>
+
+</html>

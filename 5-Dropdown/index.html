@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    /* Basic Dropdown */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 4px;
+      margin-top: 5px;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f5f5f5;
+    }
+
+    /* Animated Dropdown */
+    .dropdown-animated .dropdown-content {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-animated:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Multi-level Dropdown */
+    .nested-dropdown {
+      position: relative;
+    }
+
+    .nested-dropdown-content {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .nested-dropdown:hover .nested-dropdown-content {
+      display: block;
+    }
+
+    /* Mega Menu Dropdown */
+    .mega-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .mega-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      width: 100%;
+      left: 0;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .mega-dropdown:hover .mega-content {
+      display: flex;
+    }
+
+    .mega-column {
+      flex: 1;
+      padding: 0 15px;
+    }
+
+    /* Select Dropdown Styling */
+    .custom-select {
+      position: relative;
+      display: inline-block;
+    }
+
+    .custom-select select {
+      display: none;
+    }
+
+    .select-selected {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .select-items {
+      position: absolute;
+      background-color: white;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+
+    .select-items div {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .select-items div:hover {
+      background-color: #f5f5f5;
+    }
+
+    /* Navbar Dropdown */
+    .navbar {
+      background-color: #333;
+      padding: 15px;
+    }
+
+    .nav-dropdown {
+      display: inline-block;
+      position: relative;
+    }
+
+    .nav-dropdown>a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-dropdown:hover .nav-dropdown-content {
+      display: block;
+    }
+
+    /* Image Dropdown */
+    .image-dropdown-content {
+      width: 300px;
+      padding: 10px;
+    }
+
+    .image-dropdown-content img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    /* Search Dropdown */
+    .search-dropdown input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+
+    .search-results {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Basic Dropdown -->
+  <div class="dropdown">
+    <button class="dropdown-button">Basic Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">Option 1</a>
+      <a href="#">Option 2</a>
+      <a href="#">Option 3</a>
+    </div>
+  </div>
+
+  <!-- Animated Dropdown -->
+  <div class="dropdown dropdown-animated">
+    <button class="dropdown-button">Animated Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">Option 1</a>
+      <a href="#">Option 2</a>
+      <a href="#">Option 3</a>
+    </div>
+  </div>
+
+  <!-- Multi-level Dropdown -->
+  <div class="dropdown">
+    <button class="dropdown-button">Multi-level Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">Option 1</a>
+      <div class="nested-dropdown">
+        <a href="#">Sub Menu →</a>
+        <div class="nested-dropdown-content">
+          <a href="#">Sub Option 1</a>
+          <a href="#">Sub Option 2</a>
+        </div>
+      </div>
+      <a href="#">Option 3</a>
+    </div>
+  </div>
+
+  <!-- Mega Menu Dropdown -->
+  <div class="mega-dropdown">
+    <button class="dropdown-button">Mega Menu</button>
+    <div class="mega-content">
+      <div class="mega-column">
+        <h3>Category 1</h3>
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+      </div>
+      <div class="mega-column">
+        <h3>Category 2</h3>
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+      </div>
+      <div class="mega-column">
+        <h3>Category 3</h3>
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar with Dropdown -->
+  <nav class="navbar">
+    <div class="nav-dropdown">
+      <a href="#">Navigation ▾</a>
+      <div class="nav-dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Image Dropdown -->
+  <div class="dropdown">
+    <button class="dropdown-button">Image Dropdown</button>
+    <div class="dropdown-content image-dropdown-content">
+      <img src="/api/placeholder/280/160" alt="Dropdown image">
+      <a href="#">View Details</a>
+    </div>
+  </div>
+
+  <!-- Search Dropdown -->
+  <div class="dropdown">
+    <button class="dropdown-button">Search Dropdown</button>
+    <div class="dropdown-content search-dropdown-content">
+      <input type="text" placeholder="Search...">
+      <div class="search-results">
+        <a href="#">Result 1</a>
+        <a href="#">Result 2</a>
+        <a href="#">Result 3</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

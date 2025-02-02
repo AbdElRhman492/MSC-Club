@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* Descendant Combinator (space) */
+    .container p {
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Child Combinator (>) */
+    .parent>span {
+      color: blue;
+      font-weight: bold;
+    }
+
+    /* Adjacent Sibling Combinator (+) */
+    h2+p {
+      font-size: 18px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    /* General Sibling Combinator (~) */
+    h2~p {
+      font-style: italic;
+      margin: 8px 0;
+    }
+
+    /* Multiple Combinators */
+    .nested>div+p {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    /* Practical Example Styles */
+    .article-section {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .article-section>h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+    }
+
+    .article-section>p {
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .menu-list>li {
+      list-style: none;
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .menu-list>li+li {
+      margin-top: 5px;
+    }
+
+    /* Form Styles using Combinators */
+    .form-group>label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group>input+.help-text {
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    /* Card Layout using Combinators */
+    .card>img+.card-content {
+      padding: 15px;
+      background: #fff;
+    }
+
+    /* Navigation using Combinators */
+    .nav>li>a {
+      text-decoration: none;
+      color: #333;
+      padding: 10px 15px;
+      display: block;
+    }
+
+    .nav>li+li {
+      border-left: 1px solid #eee;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Descendant Combinator Example -->
+  <div class="container">
+    <p>This is a descendant paragraph.</p>
+    <div>
+      <p>This is also styled as a descendant.</p>
+    </div>
+  </div>
+
+  <!-- Child Combinator Example -->
+  <div class="parent">
+    <span>Direct child span</span>
+    <div>
+      <span>Not a direct child span</span>
+    </div>
+  </div>
+
+  <!-- Adjacent Sibling Example -->
+  <h2>Header</h2>
+  <p>This paragraph is adjacent to the h2.</p>
+  <p>This paragraph is not adjacent to the h2.</p>
+
+  <!-- General Sibling Example -->
+  <h2>Another Header</h2>
+  <div>A div in between</div>
+  <p>This is a general sibling of h2.</p>
+  <p>This is also a general sibling of h2.</p>
+
+  <!-- Practical Examples -->
+  <article class="article-section">
+    <h1>Article Title</h1>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+  </article>
+
+  <!-- Menu List Example -->
+  <ul class="menu-list">
+    <li>Menu Item 1</li>
+    <li>Menu Item 2</li>
+    <li>Menu Item 3</li>
+  </ul>
+
+  <!-- Form Example -->
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text">
+    <span class="help-text">Enter your username here</span>
+  </div>
+
+  <!-- Card Example -->
+  <div class="card">
+    <img src="/api/placeholder/300/200" alt="Card image">
+    <div class="card-content">
+      <h3>Card Title</h3>
+      <p>Card description text</p>
+    </div>
+  </div>
+
+  <!-- Navigation Example -->
+  <ul class="nav">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+</body>
+
+</html>
